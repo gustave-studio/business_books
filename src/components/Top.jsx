@@ -13,7 +13,6 @@ const Top = function () {
   useEffect(() => {
     const businessBooksData = axios.get(process.env.REACT_APP_BUSINESS_BOOKS_URL);
     const futurePredictionBooksData = axios.get(process.env.REACT_APP_FUTURE_PREDICTION_URL);
-    // const businessBooksData = axios.get('https://api.gustave-studio.com/api/business_books?category=business');
     console.log('----rankingData');
     console.log(businessBooksData);
 
