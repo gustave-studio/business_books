@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 
-const EditorialDepartmentRecommendationsBox = function (props) {
+const RecommendationsBox = function (props) {
   const { rankingData } = props;
 
   console.log('----rankingData');
@@ -62,7 +62,7 @@ const EditorialDepartmentRecommendationsBox = function (props) {
   );
 };
 
-EditorialDepartmentRecommendationsBox.propTypes = {
+RecommendationsBox.propTypes = {
   rankingData: PropTypes.arrayOf(
     PropTypes.PropTypes.shape({
       ranking: PropTypes.number,
@@ -71,4 +71,4 @@ EditorialDepartmentRecommendationsBox.propTypes = {
   ).isRequired,
 };
 
-export default EditorialDepartmentRecommendationsBox;
+export default RecommendationsBox;

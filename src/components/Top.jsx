@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FaSpinner } from 'react-icons/fa';
 import Header from './Header';
 import Footer from './Footer';
-import EditorialDepartmentRecommendationsBox from './EditorialDepartmentRecommendationsBox';
+import RecommendationsBox from './RecommendationsBox';
 
 const Top = function () {
   const [businessBooks, setbusinessBooks] = useState([]);
@@ -35,13 +35,13 @@ const Top = function () {
         <Grid item xs={10}>
           <div className="ranking_header">
             <h1>
-              未来予測本
+              特集 未来予測本
             </h1>
           </div>
           <div className="ranking_container">
             <h2>ビジネス書のおすすめ</h2>
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
-              { futurePredictionBooks.length ? <EditorialDepartmentRecommendationsBox rankingData={futurePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
+              { futurePredictionBooks.length ? <RecommendationsBox rankingData={futurePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
             </div>
           </div>
           <div className="ranking_header">
@@ -52,7 +52,7 @@ const Top = function () {
           <div className="ranking_container">
             <h2>ビジネス書のおすすめ</h2>
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
-              { businessBooks.length ? <EditorialDepartmentRecommendationsBox rankingData={businessBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
+              { businessBooks.length ? <RecommendationsBox rankingData={businessBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
             </div>
           </div>
         </Grid>
