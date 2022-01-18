@@ -8,11 +8,9 @@ const Header = function () {
       <HamburgerMenu width={250} />
       <Link href="/" underline="none" style={{ color: '#333333', fontSize: '18px', marginBottom: '10px' }}>
         <h1>
-          プログラミング学習
+          ビジネス書
           <br />
-          技術書
-          <br />
-          おすすめまとめ
+          おすすめ本まとめ
         </h1>
       </Link>
     </div>
