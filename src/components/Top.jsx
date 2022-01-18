@@ -35,11 +35,11 @@ const Top = function () {
         <Grid item xs={10}>
           <div className="ranking_header">
             <h1>
-              特集 未来予測全般
+              特集 未来予測
             </h1>
           </div>
           <div className="ranking_container">
-            <h2>ビジネス書のおすすめ</h2>
+            <h2>未来予測全般</h2>
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
               { futurePredictionBooks.length ? <RecommendationsBox rankingData={futurePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
             </div>
