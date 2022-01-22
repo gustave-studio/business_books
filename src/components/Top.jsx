@@ -9,12 +9,14 @@ import RecommendationsBox from './RecommendationsBox';
 const Top = function () {
   const [businessBooks, setbusinessBooks] = useState([]);
   const [futurePredictionBooks, setFuturePredictionBooks] = useState([]);
+  const [dxFuturePredictionBooks, setDxFuturePredictionBooks] = useState([]);
+  const [medicalFuturePredictionBooks, setMedicalFuturePredictionBooks] = useState([]);
 
   useEffect(() => {
     const businessBooksData = axios.get(process.env.REACT_APP_BUSINESS_BOOKS_URL);
     const futurePredictionBooksData = axios.get(process.env.REACT_APP_FUTURE_PREDICTION_URL);
-    console.log('----rankingData');
-    console.log(businessBooksData);
+    const dxFuturePredictionBooksData = axios.get(process.env.REACT_APP_DX_FUTURE_PREDICTION_URL);
+    const medicalFuturePredictionBooksData = axios.get(process.env.REACT_APP_MEDICAL_FUTURE_PREDICTION_URL);
 
     businessBooksData.then((response) => {
       setbusinessBooks(response.data.business_books.map((item) => ({ title: item.title, description: item.description, asin: item.asin })));
@@ -22,6 +24,14 @@ const Top = function () {
 
     futurePredictionBooksData.then((response) => {
       setFuturePredictionBooks(response.data.business_books.map((item) => ({ title: item.title, description: item.description, asin: item.asin })));
+    });
+
+    dxFuturePredictionBooksData.then((response) => {
+      setDxFuturePredictionBooks(response.data.business_books.map((item) => ({ title: item.title, description: item.description, asin: item.asin })));
+    });
+
+    medicalFuturePredictionBooksData.then((response) => {
+      setMedicalFuturePredictionBooks(response.data.business_books.map((item) => ({ title: item.title, description: item.description, asin: item.asin })));
     });
   }, []);
 
@@ -42,6 +52,15 @@ const Top = function () {
             <h2>未来予測全般</h2>
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
               { futurePredictionBooks.length ? <RecommendationsBox rankingData={futurePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
+            </div>
+            <hr />
+            <h2>DXの未来予測</h2>
+            <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
+              { dxFuturePredictionBooks.length ? <RecommendationsBox rankingData={dxFuturePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
+            </div>
+            <h2>医療の未来予測</h2>
+            <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
+              { medicalFuturePredictionBooks.length ? <RecommendationsBox rankingData={medicalFuturePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
             </div>
           </div>
           <div className="ranking_header">
