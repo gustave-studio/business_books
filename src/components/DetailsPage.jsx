@@ -28,45 +28,47 @@ const DetailsPage = function () {
   console.log(details);
 
   return (
-    <div className="qiita_articles_container">
+    <div className="container">
       <Header />
-      <Grid container>
-        <Grid item xs={1} />
-        <Grid item xs={10}>
-          <div className="to_amazon">
+      <div className="qiita_articles_container">
+        <Grid container>
+          <Grid item xs={1} />
+          <Grid item xs={10}>
+            <div className="to_amazon">
 
-            <a href={`https://amazon.co.jp/dp/${asin}`}>
-              <Card style={{
-                width: '125px', height: '160px', margin: '10px', textAlign: 'center', backgroundImage: `url(https://images-na.ssl-images-amazon.com/images/P/${asin}.09.MZZZZZZZ)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center top',
-              }}
-              />
-            </a>
-            <div className="to_amazon_button">
-              <a href={`https://amazon.co.jp/dp/${asin}`}>Amazonで見る</a>
+              <a href={`https://amazon.co.jp/dp/${asin}`}>
+                <Card style={{
+                  width: '125px', height: '160px', margin: '10px', textAlign: 'center', backgroundImage: `url(https://images-na.ssl-images-amazon.com/images/P/${asin}.09.MZZZZZZZ)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center top',
+                }}
+                />
+              </a>
+              <div className="to_amazon_button">
+                <a href={`https://amazon.co.jp/dp/${asin}`}>Amazonで見る</a>
+              </div>
             </div>
-          </div>
-          {/* <div className="qiita_articles">
+            {/* <div className="qiita_articles">
             <h4>
               この本の詳細
             </h4>
           </div> */}
 
-          <div>
-            <h2>
-              { details.title }
-            </h2>
-          </div>
+            <div>
+              <h2>
+                { details.title }
+              </h2>
+            </div>
 
-          <div className="qiita_articles_list">
-            <Card sx={{ minWidth: 275 }}>
-              <CardContent>
-                { details.description }
-              </CardContent>
-            </Card>
-          </div>
+            <div className="qiita_articles_list">
+              <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                  { details.description }
+                </CardContent>
+              </Card>
+            </div>
+          </Grid>
+          <Grid item xs={1} />
         </Grid>
-        <Grid item xs={1} />
-      </Grid>
+      </div>
       <Footer />
     </div>
   );
