@@ -20,14 +20,16 @@
 }
 
 .ranking_container hr {
-  margin-top: 90px;
+  margin: 50px 0px;
 }
 
 .title {
   height: 200px;
-  background-image: url('https://technical-books.s3.ap-northeast-1.amazonaws.com/pc_cg.jpg');
+  background-image: url('https://business-book-images.s3.ap-northeast-1.amazonaws.com/book.jpg');
   background-size: cover;
   background-position: center center;
+  background-color:rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;;
 }
 
 .title h1 {
@@ -133,36 +135,8 @@
 }
 
 .ranking_header h1 {
-  width: 100%;
-  font-size: 30px;
-  text-align: left;
-  font-family: 'Slabo';   
-  margin: 30px 0px 10px 0px;
-  display: inline-block;
-  position: relative;
-  height: 90px;
-  line-height: 60px;
-  vertical-align: middle;
-  text-align: left;
-  padding: 10px 10px 10px 10px;
-  font-size: 20px;
-  background: #f53b57;
-  color: #FAFAFA;
-  box-sizing: border-box;
-  line-height: 30px
-}
-  
-.ranking_header h1::after {
-  position: absolute;
-  content: '';
-  width: 0px;
-  height: 0px;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  border-width: 46px 20px 45px 0px;
-  border-color: transparent #FAFAFA transparent transparent;
-  border-style: solid;
+  margin-top: 50px;
+  border-bottom: double 5px #F89902;
 }
 
 .container h2 {
@@ -219,7 +193,7 @@
   max-width: 120px;
   font-size: 14px;
   font-weight: 900;
-  background: #F3A847;
+  background: #F89902;
   color: #FAFAFA;
   padding: 5px;
   text-align: center;

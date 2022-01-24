@@ -8,6 +8,8 @@ const Header = function () {
       <HamburgerMenu width={250} />
       <Link href="/" underline="none" style={{ color: '#333333', fontSize: '18px', marginBottom: '10px' }}>
         <h1>
+          未来予測本が豊富！
+          <br />
           ビジネス書
           <br />
           おすすめ本まとめ

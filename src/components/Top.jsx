@@ -58,6 +58,7 @@ const Top = function () {
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
               { dxFuturePredictionBooks.length ? <RecommendationsBox rankingData={dxFuturePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
             </div>
+            <hr />
             <h2>医療の未来予測</h2>
             <div style={{ display: 'flex', overflowX: 'auto' }} className="rankings">
               { medicalFuturePredictionBooks.length ? <RecommendationsBox rankingData={medicalFuturePredictionBooks} /> : <FaSpinner icon="spinner" className="spinner" />}
