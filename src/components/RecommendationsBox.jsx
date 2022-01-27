@@ -10,8 +10,14 @@ const RecommendationsBox = function (props) {
   console.log('----rankingData');
   console.log(rankingData);
 
-  // const pattern = /[^0-9A-Z]([0-9A-Z]{10})([^0-9A-Z]|$)/;
-  // const isbn = url.match(pattern)[1]
+  const linkOfImage = (ranking) => {
+    if (ranking.description) {
+      return (
+        `${process.env.REACT_APP_HOST}/details/${ranking.asin}`
+      );
+    }
+    return `https://amazon.co.jp/dp/${ranking.asin}`;
+  };
 
   const awardChecker = (ranking) => {
     if (ranking.description) {
@@ -38,7 +44,7 @@ const RecommendationsBox = function (props) {
       { rankingData.map((ranking) => (
         <div className="ranking_item">
           <div className="award_container" />
-          <a href={`https://amazon.co.jp/dp/${ranking.asin}`}>
+          <a href={linkOfImage(ranking)}>
             <Card style={{
               width: '125px', height: '160px', margin: 'auto', textAlign: 'center', backgroundImage: `url(${imageURL(ranking.asin)})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center top',
             }}
