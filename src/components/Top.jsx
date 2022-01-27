@@ -45,7 +45,7 @@ const Top = function () {
         <Grid item xs={10}>
           <div className="ranking_header">
             <h1>
-              特集 未来予測
+              未来予測本一覧
             </h1>
           </div>
           <div className="ranking_container">

@@ -12,25 +12,25 @@ const DetailsPage = function () {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
-    const recommendedBook = axios.get(`${process.env.REACT_APP_EDITORIAL_DEPARTMENT_RECOMMENDATION_URL}?asin=${asin}`);
+    const recommendedBook = axios.get(`${process.env.REACT_APP_ALL_BUSINESS_BOOKS_URL}?asin=${asin}`);
 
     recommendedBook.then((response) => {
+      console.log('response');
+      console.log(response);
+
       setDetails(
         {
-          title: response.data.editorial_department_recommendations[0].title,
-          description: response.data.editorial_department_recommendations[0].description,
+          title: response.data.business_books[0].title,
+          description: response.data.business_books[0].description,
         },
       );
     });
   }, []);
 
-  console.log('details');
-  console.log(details);
-
   return (
     <div className="container">
       <Header />
-      <div className="qiita_articles_container">
+      <div className="details_container">
         <Grid container>
           <Grid item xs={1} />
           <Grid item xs={10}>
@@ -46,19 +46,14 @@ const DetailsPage = function () {
                 <a href={`https://amazon.co.jp/dp/${asin}`}>Amazonで見る</a>
               </div>
             </div>
-            {/* <div className="qiita_articles">
-            <h4>
-              この本の詳細
-            </h4>
-          </div> */}
 
-            <div>
+            <div className="details_title">
               <h2>
                 { details.title }
               </h2>
             </div>
 
-            <div className="qiita_articles_list">
+            <div className="details_description">
               <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                   { details.description }

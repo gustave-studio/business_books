@@ -115,7 +115,7 @@
   text-decoration: none;
 }
 
-.qiita_articles_list {
+.details_description {
   max-width: 600px;
   margin: auto;
   white-space: pre-wrap;
@@ -133,12 +133,18 @@
   text-decoration: none;
 }
 
-.qiita_articles_container p {
+.details_container p {
   color: #333333;
 }
 
-.qiita_articles_container a {
+.details_container a {
   text-decoration-color:#333333
+}
+
+.details_title {
+  max-width: 600px;
+  margin: auto;
+  white-space: pre-wrap;
 }
 
 .ranking_header {
